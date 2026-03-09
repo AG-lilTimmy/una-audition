@@ -2,190 +2,363 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Choir Audition Video</title>
+<title>Choir Audition</title>
 
 <style>
+
 body{
 margin:0;
-font-family:Arial, Helvetica, sans-serif;
 background:#0f0f0f;
 color:white;
+font-family:Roboto, Arial;
 }
 
-header{
+/* TOP NAVBAR */
+
+.navbar{
 display:flex;
 align-items:center;
-padding:10px 20px;
-background:#0f0f0f;
-border-bottom:1px solid #222;
+padding:10px 16px;
+background:#202020;
 }
 
 .logo{
-color:#ff0000;
+color:red;
 font-weight:bold;
-font-size:22px;
+font-size:20px;
 margin-right:20px;
 }
 
 .search{
 flex:1;
+display:flex;
+justify-content:center;
 }
 
 .search input{
-width:60%;
+width:50%;
 padding:8px;
 background:#121212;
-border:1px solid #333;
+border:1px solid #303030;
 color:white;
-border-radius:20px;
 }
 
-.container{
+.search button{
+background:#303030;
+border:none;
+padding:8px 16px;
+color:white;
+}
+
+.profile{
+margin-left:20px;
+width:32px;
+height:32px;
+background:#555;
+border-radius:50%;
+}
+
+/* MAIN LAYOUT */
+
+.layout{
 display:flex;
-padding:20px;
-gap:20px;
 }
 
-.main{
-flex:3;
-}
+/* SIDEBAR */
 
 .sidebar{
+width:80px;
+background:#181818;
+height:100vh;
+padding-top:20px;
+text-align:center;
+}
+
+.sidebar div{
+margin-bottom:25px;
+color:#aaa;
+font-size:12px;
+}
+
+/* VIDEO AREA */
+
+.content{
 flex:1;
+display:flex;
+padding:20px;
+}
+
+.video-area{
+width:70%;
 }
 
 video{
 width:100%;
-background:black;
 border-radius:10px;
 }
+
+/* VIDEO INFO */
 
 .title{
 font-size:20px;
 margin-top:10px;
 }
 
-.channel{
+.channel-row{
 display:flex;
 align-items:center;
 margin-top:10px;
-gap:10px;
 }
 
-.channel img{
+.channel-avatar{
 width:40px;
 height:40px;
 border-radius:50%;
+background:#666;
+margin-right:10px;
 }
 
-.uploadBox{
-margin-top:20px;
-padding:20px;
-border:1px dashed #444;
-border-radius:10px;
-text-align:center;
+.subscribe{
+margin-left:auto;
+background:red;
+border:none;
+padding:10px 16px;
+color:white;
+border-radius:20px;
+cursor:pointer;
 }
 
-.uploadBox input{
+/* BUTTONS */
+
+.actions{
 margin-top:10px;
 }
 
-.recommend{
-background:#1a1a1a;
-padding:10px;
-border-radius:10px;
-margin-bottom:10px;
+.actions button{
+background:#272727;
+border:none;
+color:white;
+padding:8px 12px;
+border-radius:20px;
+margin-right:8px;
+cursor:pointer;
 }
 
-.thumbnail{
-width:100%;
-height:80px;
-background:#333;
-border-radius:6px;
-margin-bottom:5px;
+/* DESCRIPTION */
+
+.description{
+background:#181818;
+padding:12px;
+border-radius:10px;
+margin-top:10px;
 }
+
+/* COMMENTS */
+
+.comments{
+margin-top:20px;
+}
+
+.comment{
+display:flex;
+margin-top:15px;
+}
+
+.comment-avatar{
+width:35px;
+height:35px;
+border-radius:50%;
+
+margin-right:10px;
+}
+img{
+    border-radius:50%;
+}
+.comment-body{
+background:#181818;
+padding:10px;
+border-radius:8px;
+}
+
+/* RECOMMENDED VIDEOS */
+
+.recommend{
+width:30%;
+padding-left:20px;
+}
+
+.rec-video{
+display:flex;
+margin-bottom:15px;
+cursor:pointer;
+}
+
+.thumb{
+width:160px;
+height:90px;
+background:#333;
+margin-right:10px;
+}
+
+.rec-title{
+font-size:14px;
+}
+
+.rec-channel{
+font-size:12px;
+color:#aaa;
+}
+
 </style>
 </head>
 
 <body>
 
-<header>
-<div class="logo">▶ ChoirTube</div>
+<!-- NAVBAR -->
+
+<div class="navbar">
+
+<div class="logo">ChoirTube</div>
+
 <div class="search">
 <input placeholder="Search">
-</div>
-</header>
-
-<div class="container">
-
-<div class="main">
-
-<video id="videoPlayer" controls></video>
-
-<div class="title">Unabantu's Audition</div>
-
-<div class="channel">
-<img
-  src="https://api.dicebear.com/9.x/adventurer-neutral/svg"
-  alt="avatar"
-/>
-<div>
-<div>Audition Submission</div>
-<div style="font-size:12px;color:gray;">Private audition video</div>
-</div>
+<button>🔍</button>
 </div>
 
-<div class="uploadBox">
-<div>Upload your audition video</div>
-<input type="file" id="uploadVideo" accept="video/*">
-</div>
+<div class="profile"></div>
 
 </div>
+
+
+<div class="layout">
+
+<!-- SIDEBAR -->
 
 <div class="sidebar">
 
+<div><br>Home</div>
+<div><br>Trending</div>
+<div><br>Music</div>
+<div><br>Library</div>
+
+</div>
+
+
+<!-- CONTENT -->
+
+<div class="content">
+
+<div class="video-area">
+
+<video controls>
+<source src="video.mp4" type="video/mp4">
+</video>
+
+<div class="title">
+Unabantu's Audition
+</div>
+
+<div class="channel-row">
+
+<div class="channel-avatar"> 
+    <img src="https://api.dicebear.com/9.x/adventurer-neutral/svg" alt="avatar" />
+</div>
+
+<div>
+<b>Una</b><br>
+8.7M subscribers
+</div>
+
+<button class="subscribe">Subscribe</button>
+
+</div>
+
+<div class="actions">
+
+<button>👍 Like</button>
+<button>🔗 Share</button>
+<button>⬇ Download</button>
+
+</div>
+
+<div class="description">
+
+<b>Description</b>
+
+<p>
+Choir audition performance submission.
+I am Unabantu and hopefully you will enjoy my performance.
+Duration: approximately 5 minutes.
+</p>
+
+</div>
+
+<div class="comments">
+
+<h3>Comments</h3>
+
+<div class="comment">
+<div class="comment-avatar"></div>
+<div class="comment-body">
+<b>Nele</b><br>
+Beautiful vocals. Im a fan.
+</div>
+</div>
+
+<div class="comment">
+<div class="comment-avatar"></div>
+<div class="comment-body">
+<b>Lithemba</b><br>
+I didnt even know you had a youtube channel bestie xoxo.
+</div>
+</div>
+
+</div>
+
+</div>
+
+<!-- RECOMMENDED -->
+
 <div class="recommend">
-<div class="thumbnail"></div>
-Sample Choir Performance
-</div>
 
-<div class="recommend">
-<div class="thumbnail"></div>
-Vocal Warmups
-</div>
+<div class="rec-video">
 
-<div class="recommend">
-<div class="thumbnail"></div>
-Choir Technique
+<div class="thumb"></div>
+
+<div>
+<div class="rec-title">Lins –  Session</div>
+<div class="rec-channel">Choir Audition</div>
 </div>
 
 </div>
 
+<div class="rec-video">
+
+<div class="thumb"></div>
+
+<div>
+<div class="rec-title">Warm-Up Vocal Exercise</div>
+<div class="rec-channel">Choir Audition</div>
 </div>
 
-<script>
+</div>
 
-const upload = document.getElementById("uploadVideo");
-const player = document.getElementById("videoPlayer");
+<div class="rec-video">
 
-upload.addEventListener("change", function(){
+<div class="thumb"></div>
 
-const file = this.files[0];
+<div>
+<div class="rec-title">Choir Performance Sample</div>
+<div class="rec-channel">Choir Audition</div>
+</div>
 
-if(file){
+</div>
 
-const url = URL.createObjectURL(file);
+</div>
 
-player.src = url;
+</div>
 
-player.play();
-
-}
-
-});
-
-</script>
+</div>
 
 </body>
 </html>
