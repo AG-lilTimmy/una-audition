@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Choir Audition</title>
+
+<style>
+
+body{
+background:#0f0f0f;
+color:white;
+font-family: 'Georgia', serif;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+flex-direction:column;
+}
+
+.container{
+background:#1b1b1b;
+padding:40px;
+border-radius:15px;
+box-shadow:0 0 20px rgba(255,255,255,0.1);
+text-align:center;
+width:500px;
+}
+
+h1{
+letter-spacing:2px;
+}
+
+input{
+margin-top:20px;
+}
+
+video{
+margin-top:20px;
+width:100%;
+border-radius:10px;
+}
+
+button{
+margin-top:20px;
+padding:10px 25px;
+border:none;
+background:#d4af37;
+color:black;
+font-weight:bold;
+border-radius:8px;
+cursor:pointer;
+}
+
+button:hover{
+background:#e6c65c;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Choir Audition</h1>
+
+<p>Upload your performance video</p>
+
+<input type="file" id="videoUpload" accept="video/*">
+
+<br>
+
+<button onclick="previewVideo()">Preview</button>
+
+<video id="videoPlayer" controls></video>
+
+</div>
+
+<script>
+
+function previewVideo(){
+
+let file = document.getElementById("videoUpload").files[0]
+
+let url = URL.createObjectURL(file)
+
+document.getElementById("videoPlayer").src = url
+
+}
+
+</script>
+
+</body>
+</html>
